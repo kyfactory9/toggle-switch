@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toggle switch</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<span class="button left normal" style="--color:#be765e">thick</span>
+		<span class="button right pushed" style="--color:#be765e">punch</span>
+	</div>
+	<div class="container">
+		<span class="button left normal" style="--color:#be586a">gentle</span>
+		<span class="button right pushed" style="--color:#be586a">warm</span>
+	</div>
+	<div class="container">
+		<span class="button left normal" style="--color:#9f7cb1">flipped</span>
+		<span class="button right pushed" style="--color:#9f7cb1">direct</span>
+	</div>
+	<div class="container">
+		<span class="button left normal" style="--color:#6189a7">excited</span>
+		<span class="button right pushed" style="--color:#6189a7">smooth</span>
+	</div>
+
+	<script>
+		const buttons = document.querySelectorAll('.button');
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				if(e.target.classList.contains('normal')) {
+					e.target.parentElement.childNodes[1].classList.toggle('normal');
+					e.target.parentElement.childNodes[1].classList.toggle('pushed');
+					e.target.parentElement.childNodes[3].classList.toggle('normal');
+					e.target.parentElement.childNodes[3].classList.toggle('pushed');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
